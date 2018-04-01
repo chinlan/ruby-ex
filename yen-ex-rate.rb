@@ -20,3 +20,6 @@ today_row = rows[rows.length-1]
 yen_rate = (today_row[dollar_to_nt_index]/today_row[dollar_to_yen_index]).round(3)
 puts "#{Time.now.strftime('%Y/%m/%d')}日幣匯率：#{yen_rate}"
 
+if ARGV
+  puts (ARGV[0].to_i * yen_rate).round(3)
+end
